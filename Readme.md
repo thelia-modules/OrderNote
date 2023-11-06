@@ -7,5 +7,5 @@
 Add it in your main thelia composer.json file
 
 ```
-composer require your-vendor/order-note-module:~1.0
+composer require thelia/order-note-module ~1.0
 ```
