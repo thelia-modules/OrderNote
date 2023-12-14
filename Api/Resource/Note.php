@@ -88,7 +88,7 @@ class Note implements ResourceAddonInterface
         if (OrderNoteQuery::create()->filterByOrderId($activeRecord->getId())->findOne() === null){
             return $this;
         }
-        $this->note = $activeRecord->getVirtualColumn('Note_note');
+        $this->note = $activeRecord->hasVirtualColumn('Note_note') ? $activeRecord->getVirtualColumn('Note_note') : null;
         return $this;
     }
 
