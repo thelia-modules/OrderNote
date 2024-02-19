@@ -25,7 +25,7 @@ class Note implements ResourceAddonInterface
 
     public int $orderId;
 
-    #[Groups([Order::GROUP_READ_SINGLE, Order::GROUP_WRITE])]
+    #[Groups([Order::GROUP_ADMIN_READ_SINGLE, Order::GROUP_ADMIN_WRITE])]
     public ?string $note;
 
     public function getId(): ?int
@@ -119,6 +119,4 @@ class Note implements ResourceAddonInterface
             OrderNoteQuery::create()->findOneById($siret->getId())->delete();
         }
     }
-
-
 }
